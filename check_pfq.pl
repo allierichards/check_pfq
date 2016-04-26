@@ -29,11 +29,11 @@ GetOptions("noise=i" => \$noise,
            "crit=i" => \$crit,
            "warn=i" => \$warn,
            "sleep=i" => \$sleep,
-           "queue=s" => \$queue) or die("Error in command line arguments\n");
+           "queue=s" => \$queue) || exit_unknown({msg => "Error in command line arguments\n"});
 
 my $qdir = `postconf -h queue_directory`;
 chomp($qdir);
-chdir($qdir) or die "$0: chdir: $qdir: $!\n";
+chdir($qdir) || exit_unknown({msg => "queue_directory does not exist or has wrong permissions"});
 
 my $size1 = count($queue);
 if ($size1 < $noise)
