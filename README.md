@@ -1,4 +1,5 @@
 check_pfq is a Nagios plugin that checks the consumption rate of Postfix mail queues
+count() subroutine was borrowed from http://serverfault.com/a/329884
 
 Methodology
 

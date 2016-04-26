@@ -60,13 +60,6 @@ else
 }
 
 
-#printf "Incoming: %d\n", count("incoming");
-#printf "Active: %d\n", count("active");
-#printf "Deferred: %d\n", count("deferred");
-#printf "Bounced: %d\n", count("bounce");
-#printf "Hold: %d\n", count("hold");
-#printf "Corrupt: %d\n", count("corrupt");
-
 # count returns the number of messages in the given queue
 # It will fail in Postfix 2.9+ when enable_long_queue_ids=yes
 # So if we upgrade Postfix and use long queue id's we'll need some new regex
