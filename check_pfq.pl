@@ -44,11 +44,11 @@ else
   my $rate = $size1 - $size2;
   if ($rate <= $crit)
   {
-    exit_crit({msg => "'$queue' queue is processing fewer than $crit messages per $sleep seconds", size => $size2});
+    exit_crit({msg => "'$queue' queue is processing $crit messages (or fewer) per $sleep seconds", size => $size2});
   }
   elsif ($rate <= $warn)
   {
-    exit_warn({msg => "'$queue' queue is processing fewer than $crit messages per $sleep seconds", size => $size2});
+    exit_warn({msg => "'$queue' queue is processing $crit messages (or fewer) per $sleep seconds", size => $size2});
   }
   else
   {
