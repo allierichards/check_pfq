@@ -1,8 +1,5 @@
 #!/usr/bin/env perl
 
-# postfix queue/s size
-# source: http://tech.groups.yahoo.com/group/postfix-users/message/255133
-
 use strict;
 use warnings;
 use Symbol;
@@ -47,11 +44,11 @@ else
   my $rate = $size1 - $size2;
   if ($rate <= $crit)
   {
-    exit_crit({msg => "'$queue' queue is processing less than $crit messages in $sleep seconds", size => $size2});
+    exit_crit({msg => "'$queue' queue is processing fewer than $crit messages in $sleep seconds", size => $size2});
   }
   elsif ($rate <= $warn)
   {
-    exit_warn({msg => "'$queue' queue is processing less than $crit messages in $sleep seconds", size => $size2});
+    exit_warn({msg => "'$queue' queue is processing fewer than $crit messages in $sleep seconds", size => $size2});
   }
   else
   {
